@@ -20,6 +20,9 @@ pyspider包含两个py文件,douban_movie_spider.py和douban_movie_spider2.py，
 
 在[百度云](http://pyspider2014.duapp.com/)上搭建了一个tornado来显示douban_movie_spider2.py爬下来的*豆瓣北京*的正在上映电影
 
+
+电影天堂用了一串js来反爬虫,所以不得已用正则把js的函数挑出来再用python处理.
+
 ##TODO
 
-加入dytt8的电影信息
+~~加入dytt8的电影信息~~

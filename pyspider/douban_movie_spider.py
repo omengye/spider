@@ -24,7 +24,7 @@ def get_sort_films(url):
 
     for list_film in list_content:
         film_content={}
-        if (list_film.ul.span['class'] != ['new-show']):
+        if (list_film.ul.li['class'] == ['poster']):
             film_content['film_name']=list_film.ul.li.img['alt']
             film_content['film_release']=list_film['data-release']+'年'
             film_content['film_actors']=list_film['data-actors']
@@ -34,22 +34,27 @@ def get_sort_films(url):
             pic_name=path+os.sep+film_content['film_name']+'.gif'
             urllib.request.urlretrieve(film_content['film_src'],pic_name)   # 下载图片
             film_content['film_pic']=film_content['film_name']+'.gif'       # 图片名
-            if (list_film.ul.span['class'][0] == 'text-tip'):
-                film_content['points']='0'
-                film_content['film_points']='暂无评分'
-                film_content['film_stars']='评价人数不足'
-            else:
+            if list_film.find('span', {'class','subject-rate'}):
                 film_content['points']=list_film.find('span', {'class','subject-rate'}).string.strip()
                 film_content['film_points']=film_content['points']+'分'
-                original_film_stars=list_film.ul.span['class'][1]
+            else:
+                film_content['points']='0'
+                film_content['film_points']='暂无评分'
+
+            stars = list_film.find('li', {'class' :'srating'}).span['class']
+
+            if stars[0] != 'rating-star':
+                film_content['film_stars']='评价人数不足'
+            else:
+                original_film_stars=stars[1]
                 re_film_stars=re.compile(r'^\D*(\d{2})$')    # 用正则提取星数
                 film_content['film_stars']=str(int(re_film_stars.search(original_film_stars).groups()[0])/10)+'颗星'
         all_film_content.append(film_content)
 
     sort_all_film=sorted(all_film_content, key=lambda x:x['points'], reverse = True)    # 将列表中字典元素按从大到小排列
 
-    return sort_all_film
+    return all_film_content
 
-#
 # url="http://movie.douban.com/nowplaying/beijing/"
-# print(get_sort_films(url))
+# a = get_sort_films(url)
+# print(a)
