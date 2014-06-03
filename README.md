@@ -18,7 +18,8 @@ pyspider包含两个py文件,douban_movie_spider.py和douban_movie_spider2.py，
 两者返回的形式均为[列表]=[{字典},{字典},{字典}...]
 
 
-在[百度云](http://pyspider2014.duapp.com/)上搭建了一个tornado来显示douban_movie_spider2.py爬下来的*豆瓣北京*的正在上映电影
+~~在[百度云](http://pyspider2014.duapp.com/)上搭建了一个tornado来显示douban_movie_spider2.py爬下来的*豆瓣北京*的正在上映电影~~
+百度云的价格也太高了点吧,穷学生承受不起...
 
 
 电影天堂用了一串js来反爬虫,所以不得已用正则把js的函数挑出来再用python处理.
