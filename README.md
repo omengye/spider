@@ -24,6 +24,9 @@ pyspider包含两个py文件,douban_movie_spider.py和douban_movie_spider2.py，
 
 电影天堂用了一串js来反爬虫,所以不得已用正则把js的函数挑出来再用python处理.
 
+
+微信公众号能在搜狗上搜索了,所以爬下来也就不是一个难事了,这里抓取的是公众号碉堡的图片链接.
+
 ##TODO
 
 ~~加入dytt8的电影信息~~
