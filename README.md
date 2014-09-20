@@ -26,6 +26,7 @@ pyspider包含两个py文件,douban_movie_spider.py和douban_movie_spider2.py，
 
 
 微信公众号能在搜狗上搜索了,所以爬下来也就不是一个难事了,这里抓取的是公众号碉堡的图片链接.
+处理好的demo放在[coding](http://omengye.coding.io/)上了.
 
 ##TODO
 
