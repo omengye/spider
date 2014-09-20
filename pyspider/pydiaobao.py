@@ -113,6 +113,17 @@ for i in key_urls:
 
 # print real_pic_urls
 
-final_urls = filter(lambda x : all_pic_urls.count(x) == 1, all_pic_urls) # 删除所有重复项-过滤广告图片
+final_urls = filter(lambda x : all_pic_urls.count(x) == 1, all_pic_urls) # 删除所有重复项
+
+ads_url = [u'http://mmbiz.qpic.cn/mmbiz/ibfSwYkJfj0szae7EVSRVB17MttuDmyeAiaDGIYB3nSsdqFEqqTBOUXLUljbTylbcwBHybrKlg3d1gIKL1TCecKw/0', \
+           u'http://mmbiz.qpic.cn/mmbiz/ibfSwYkJfj0uOajPmwUAfTcOKGgMgZ8WWicObJxCfRrDffFZ5ntsHvLVW7wD0nQmndXVbGCIjkVqEFNZmbNCFOnQ/0', \
+           u'http://mmbiz.qpic.cn/mmbiz/ibfSwYkJfj0v8EXQ8cvK4NraibD8bJapPqPTO7lTRI46y7AglS9r3sibqmU1CTu0y47uBMLAflmDGPezK7l7ZeTfg/0', \
+           u'http://mmbiz.qpic.cn/mmbiz/ibfSwYkJfj0tMMqX2jw1lxiawwP8vEsmkib8Y8lr1V6utbIV69ggtZN0EAnWKCrWbjfiabl2fIicjKoqMtpYXEeyqVg/0', \
+           u'http://mmbiz.qpic.cn/mmbiz/ibfSwYkJfj0vqRiayu7DS2K3ugicZPCsibibJCqLuUfVvhiabXh9B5OSFRp6QJojiaId9O3Gr5ERrak4Lzr40mWFXLbbg/0']
+
+
+for ad_url in ads_url:
+    del_ad = final_urls.index(ad_url)
+    del final_urls[del_ad]  # 删除广告图片
 
 print final_urls
