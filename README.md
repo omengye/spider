@@ -1,8 +1,24 @@
-#Python Web Crawler
+# Python Web Crawler
 
-powered by *py新手,渣前端*
+## douban movie
+Scraping [douban movie](http://movie.douban.com/nowplaying/beijing/) web site with an indicated region to collect and extract the information of each film which is on now, and then sort them by descending order of the film score.  
+To execute:
+```
+set the url in main_2.py (ex. url="http://movie.douban.com/nowplaying/beijing/")
+./main_2.py
+```
+*You need to install the libraries urllib2, bs4, and chardet if you don't have.*
 
-##douban_movie
+## dytt8 movie
+Scraping [dytt8 movie](http://www.dytt8.net/html/gndy/dyzz/index.html) web site with an indicated region to collect and extract the information of each film which is on now, and then sort them by descending order of the film score.  
+To execute:
+```
+set the url in main_2.py (ex. url="http://www.dytt8.net/html/gndy/dyzz/index.html")
+./main_2.py
+```
+*You need to install the libraries urllib2, bs4, and chardet if you don't have.*
+
+## douban movie
 将[豆瓣电影](http://movie.douban.com/nowplaying/beijing/)中某地区正在上映的电影爬下来,并按得分高低顺序排列,执行:
     
     在main_2.py中设置url(ex. url="http://movie.douban.com/nowplaying/beijing/")
@@ -11,7 +27,7 @@ powered by *py新手,渣前端*
 main_2.py与spider_2.py基于Python 2.x, spider_3.py基于Python 3.x(待更新)
 所用到的库:urllib2, bs4, chardet. 没有请自行下载
 
-##dytt8_movie
+## dytt8 movie
 将[电影天堂](http://www.dytt8.net/html/gndy/dyzz/index.html)上的最新电影及其下载地址爬下来,执行:
 
     在main_2.py中设置url(ex. url="http://www.dytt8.net/html/gndy/dyzz/index.html")
@@ -32,5 +48,6 @@ main_2.py与spider_2.py基于Python 2.x, spider_3.py基于Python 3.x(待更新)
 处理好的demo放在[coding](http://omengye.coding.io/)上了.
 
 ##TODO
-~~加入dytt8的电影信息~~
 Python 3.x下的douban_movie与dytt8_movie
+weixin-sogou web scraping
+xiami web scraping
