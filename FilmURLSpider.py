@@ -45,9 +45,7 @@ class SpiderDytt8:
             # get url
             filmHref = "http://www.dytt8.net" + film['href']
             # open url
-            filmContent = self.__opener.open(filmHref).read()
-            encoding = chardet.detect(filmContent)['encoding']
-            filmContent = filmContent.decode(encoding, 'ignore')
+            filmContent = self.openUrl(filmHref)
             # create a BeautifulSoup object
             filmSoup = bs4.BeautifulSoup(filmContent, "html.parser")
             # get film title
